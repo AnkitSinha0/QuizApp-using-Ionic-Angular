@@ -1,0 +1,60 @@
+/* Background */
+.bg-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px);
+}
+
+/* Toolbar */
+.comic-toolbar {
+  --background: #9b30ff; /* Purple */
+  --color: #fff;
+}
+.toolbar-title {
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* About Wrapper */
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+/* Comic Card */
+.comic-card {
+  font-family: 'Comic Sans MS', cursive !important;
+  border: 4px double #fff;
+  border-radius: 16px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+  color: #6a0dad; /* Purple text */
+  background: rgba(255,255,255,0.9);
+}
+
+ion-card-title {
+  font-size: 28px;
+  font-weight: 900;
+  text-align: center;
+  color: #9b30ff;
+}
+
+ion-card-content {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-top: 12px;
+  white-space: pre-line; /* preserves line breaks in text */
+}

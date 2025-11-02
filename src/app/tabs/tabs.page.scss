@@ -1,1 +1,35 @@
+ion-tab-bar {
+  --background: #8000ff; /* Purple background */
+  --border: none;
+  box-shadow: 0 -2px 10px rgba(128, 0, 255, 0.4); /* Soft purple glow */
+}
 
+ion-tab-button {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+
+/* ✅ Wiggle animation on selected icon */
+ion-tab-button[aria-selected="true"] {
+  font-size: 28px;
+  display: inline-block;
+  transform-origin: center;
+  animation: iconWiggle 0.6s ease-in-out infinite;
+    color: #1e90ff; /* Blue color for selected icon only */
+
+}
+
+ion-icon {
+  font-size: 24px;
+  transition: font-size 0.3s ease;
+}
+
+/* Wiggle keyframes */
+@keyframes iconWiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="comic-toolbar">
+    <ion-title class="toolbar-title">Terms & Conditions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Background -->
+  <div class="bg-container">
+    <img src="assets/bg2.png" class="bg-image" />
+  </div>
+
+  <!-- Terms Card -->
+  <div class="terms-wrapper">
+    <ion-card class="comic-card">
+      <ion-card-header>
+        <ion-card-title>Terms & Conditions</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ termsText }}
+      </ion-card-content>
+    </ion-card>
+
+    <!-- OK Button -->
+    <ion-button expand="block" class="comic-btn" (click)="goHome()">OK</ion-button>
+  </div>
+</ion-content>

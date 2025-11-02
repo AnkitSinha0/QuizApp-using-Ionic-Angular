@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <div class="top-bar">
+      <img src="assets/logo.png" class="logo" />
+      <ion-title class="comic-title">QuizCenter</ion-title>
+    <ion-avatar (click)="goToProfile()" class="clickable-avatar">
+        <img [src]="avatarUrl" />
+      </ion-avatar>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Background image -->
+  <div class="bg-container">
+    <img src="assets/bg3.png" class="bg-image" />
+  </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="overlay-content">
+    <!-- Search bar -->
+    <ion-input [(ngModel)]="searchText" placeholder="Search subjects..." clearInput></ion-input>
+
+    <!-- Subjects grid -->
+    <div class="subject-grid">
+      <ion-card class="subject-card" 
+                *ngFor="let s of filteredSubjects()" 
+                [class.disabled]="s.comingSoon"
+                (click)="navigateToSubject(s)">
+        <img [src]="s.icon" />
+        <ion-card-header>
+          <ion-card-title>{{ s.name }}</ion-card-title>
+          <span *ngIf="s.comingSoon" class="coming-soon">Coming Soon</span>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>

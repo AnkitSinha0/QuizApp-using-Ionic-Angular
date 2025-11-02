@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="comic-toolbar">
+    <ion-title class="toolbar-title">About QuizzyApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Background -->
+  <div class="bg-container">
+    <img src="assets/bg2.png" class="bg-image" />
+  </div>
+
+  <!-- About Card -->
+  <div class="about-wrapper">
+    <ion-card class="comic-card">
+      <ion-card-header>
+        <ion-card-title>About QuizzyApp</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ aboutText }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

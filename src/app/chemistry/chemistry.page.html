@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="comic-toolbar">
+    <div class="top-bar">
+      <img src="assets/logo.png" class="logo" />
+      <span class="comic-title">Chemistry</span>
+
+      <!-- Back arrow button -->
+      <ion-button fill="clear" class="home-btn" (click)="goToTabs2()">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="bg-container">
+    <img src="assets/bg7.png" class="bg-image" />
+  </div>
+
+  <div class="overlay-content">
+    <!-- Toggle menu -->
+    <div class="toggle-bar">
+      <button [class.active]="filter === 'all'" (click)="filter='all'">All</button>
+      <button [class.active]="filter === 'attempted'" (click)="filter='attempted'">Attempted</button>
+      <button [class.active]="filter === 'nonAttempted'" (click)="filter='nonAttempted'">Non-Attempted</button>
+    </div>
+
+    <!-- Levels list -->
+    <div class="level-list">
+      <div class="level-card" *ngFor="let level of filteredLevels()" (click)="openLevelModal(level)">
+        <div class="level-info">
+          <div class="level-name">Level {{ level.number }}</div>
+        </div>
+        <div class="accuracy">
+          {{ level.attempted ? level.accuracy + '%' : '--' }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Comic Modal -->
+  <div class="comic-modal" *ngIf="showModal">
+    <div class="modal-content">
+      <img src="assets/quiz.png" class="modal-image" />
+      <div class="modal-title">Level {{ selectedLevel?.number }}</div>
+      <div class="modal-buttons">
+        <button class="comic-btn" (click)="takeTest(selectedLevel!)">Take Test</button>
+        <button class="comic-btn cancel" (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="comic-toolbar">
+    <div class="top-bar">
+      <img src="assets/logo.png" class="logo" />
+      <span class="comic-title">{{ subject | titlecase }} - Level {{ level }}</span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="bg-container">
+    <img src="assets/bg5.png" class="bg-image" />
+  </div>
+
+  <div class="overlay-content">
+    <div *ngIf="currentIndex < questions.length">
+      <div class="timer" (click)="stopTimer()">⏱ {{ timeLeft }}s</div>
+      <div class="question">{{ questions[currentIndex].question }}</div>
+
+      <div class="options">
+        <button *ngFor="let opt of questions[currentIndex].options; let i = index" 
+                [class.selected]="selectedOption === i" 
+                (click)="selectOption(i)">
+          {{ opt }}
+        </button>
+      </div>
+
+      <div class="quiz-buttons">
+        <button class="comic-btn" (click)="showHint()">Hint</button>
+        <button class="comic-btn" [disabled]="selectedOption===null" (click)="nextQuestion()">Next</button>
+      </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="comic-modal" *ngIf="showResultModal">
+      <div class="modal-content">
+        <img src="assets/quiz.png" class="modal-image" />
+        <div class="modal-title">Your Score: {{ score }}/{{ questions.length }}</div>
+        <button class="comic-btn" (click)="closeResultModal()">Close</button>
+      </div>
+    </div>
+    <!-- Hint Modal -->
+<div class="comic-modal" *ngIf="showHintModal">
+  <div class="modal-content">
+    <img src="assets/confuse.png" class="modal-image" />
+    <div class="modal-title">Hint</div>
+    <div class="modal-text">{{ questions[currentIndex]?.hint }}</div>
+    <button class="comic-btn" (click)="closeHintModal()">Close</button>
+  </div>
+</div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="comic-toolbar">
+    <ion-title class="toolbar-title">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Background -->
+  <div class="bg-container">
+    <img src="assets/bg2.png" class="bg-image" />
+  </div>
+
+  <!-- Login Form -->
+  <div class="login-wrapper">
+    <h1 class="comic-title">Welcome Back!</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="comic-form">
+
+      <!-- Email -->
+      <ion-input
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        class="comic-input"
+      ></ion-input>
+      <div *ngIf="submitted && f['email'].errors" class="error-msg">
+        <span *ngIf="f['email'].errors['required']">Email is required</span>
+        <span *ngIf="f['email'].errors['email']">Enter a valid email</span>
+      </div>
+
+      <!-- Password -->
+      <ion-input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+        class="comic-input"
+      ></ion-input>
+      <div *ngIf="submitted && f['password'].errors" class="error-msg">
+        <span *ngIf="f['password'].errors['required']">Password is required</span>
+        <span *ngIf="f['password'].errors['minlength']">
+          Password must be at least 6 characters
+        </span>
+      </div>
+
+      <!-- Forgot Password -->
+      <button type="button" class="forgot-btn">Forgot Password?</button>
+
+      <!-- Submit -->
+      <ion-button type="submit" expand="block" class="comic-btn">Login</ion-button>
+
+    </form>
+  </div>
+</ion-content>

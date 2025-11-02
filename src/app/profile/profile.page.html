@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="comic-toolbar">
+    <div class="toolbar-content">
+      <!-- Logo left -->
+      <img src="assets/logo.png" class="toolbar-logo" />
+
+      <!-- Title center -->
+      <span class="toolbar-title">Edit Your Profile</span>
+
+      <!-- Home button right -->
+      <ion-button fill="clear" class="home-btn" (click)="goHome()">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="profile-content">
+  <!-- Background Image -->
+  <div class="bg-container">
+    <img src="assets/bg2.png" class="bg-image"/>
+  </div>
+
+  <div class="overlay-content profile-container">
+    <h2>Edit Your Profile</h2>
+
+    <!-- Avatar selection -->
+    <div class="avatar-selection">
+      <p>Select an Avatar:</p>
+      <div class="avatars">
+        <ion-img *ngFor="let a of avatars" [src]="a"
+                 [class.selected]="a === selectedAvatar"
+                 (click)="selectAvatar(a)">
+        </ion-img>
+      </div>
+    </div>
+
+    <!-- Name input -->
+    <div class="name-input">
+      <p>Your Name:</p>
+      <ion-input [(ngModel)]="username" placeholder="Enter your name"></ion-input>
+    </div>
+
+    <!-- Save button -->
+    <ion-button expand="block" class="comic-btn" (click)="saveProfile()">Save Profile</ion-button>
+  </div>
+</ion-content>

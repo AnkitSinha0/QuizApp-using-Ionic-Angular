@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Services</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Services</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- Background image container -->
+  <div class="bg-container">
+    <img src="assets/bg9.png" class="bg-image" />
+  </div>
+
+  <!-- Services grid -->
+  <div class="services-grid">
+    <ion-card *ngFor="let service of services" class="service-card" (click)="navigateTo(service)">
+      <ion-card-header>
+        <ion-card-title>{{ service.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Click to access {{ service.name }}
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
