@@ -53,7 +53,7 @@ loadScores() {
     let totalScore = 0;
     let totalQuestions = 0;
 
-    // Loop through levels 1-7 (or adjust if you have different number of levels)
+   
     for (let i = 1; i <= 7; i++) {
       const key = `${subject.name.toLowerCase()}-level-${i}`;
       const data = localStorage.getItem(key);
@@ -66,12 +66,11 @@ loadScores() {
       }
     }
 
-    // Calculate average score
+ 
     if (totalQuestions > 0) {
       subject.score = Math.round(totalScore / totalQuestions);
     }
 
-    // Assign grade and color
     subject.grade = this.calculateGrade(subject.score);
     subject.color = this.gradeColor(subject.grade);
   });
@@ -105,7 +104,7 @@ loadScores() {
     this.router.navigate(['/tabs/tab2']);
   }
 
-  // 🔥 Wiggle all subject cards
+
   startWiggle() {
     this.subjectCards.forEach(card => {
       const anim = createAnimation()

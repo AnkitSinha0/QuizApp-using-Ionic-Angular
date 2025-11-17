@@ -14,7 +14,7 @@ export const routes: Routes = [
     loadComponent: () => import('./maths/maths.page').then(m => m.MathsPage)
   },
   {
-    // Dynamic route with parameters
+ 
     path: 'quiz/:subject/:level',
     loadComponent: () => import('./quiz/quiz.page').then(m => m.QuizPage)
   },

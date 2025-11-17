@@ -1,9 +1,9 @@
-// src/app/data/math-quiz.ts
+
 
 export interface Question {
   question: string;
   options: string[];
-  answer: number; // index of correct option
+  answer: number;
   hint: string;
 }
 
@@ -13,7 +13,7 @@ export interface LevelQuiz {
 }
 
 export const MATH_QUIZZES: LevelQuiz[] = [
-  // Level 1
+  
   {
     level: 1,
     questions: [
@@ -30,7 +30,7 @@ export const MATH_QUIZZES: LevelQuiz[] = [
     ]
   },
 
-  // Level 2
+
   {
     level: 2,
     questions: [

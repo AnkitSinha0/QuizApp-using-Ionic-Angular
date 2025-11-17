@@ -1,4 +1,4 @@
-// src/app/data/biology-quiz.ts
+
 
 export interface Question {
   question: string;

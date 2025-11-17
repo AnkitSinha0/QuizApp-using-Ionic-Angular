@@ -34,7 +34,7 @@ private quizDataMap: { [key: string]: LevelQuiz[] } = {
   maths: MATH_QUIZZES,
   physics: PHYSICS_QUIZZES,
   chemistry: CHEMISTRY_QUIZZES,
-  biology: BIOLOGY_QUIZZES // <-- add biology
+  biology: BIOLOGY_QUIZZES 
 };
 
   constructor(private route: ActivatedRoute, private router: Router) { }
@@ -109,6 +109,6 @@ private quizDataMap: { [key: string]: LevelQuiz[] } = {
 
   closeResultModal() {
     this.showResultModal = false;
-    this.router.navigate([`/${this.subject}`]); // Navigate to correct subject page
+    this.router.navigate([`/${this.subject}`]); 
   }
 }
