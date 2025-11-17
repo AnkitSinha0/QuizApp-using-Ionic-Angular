@@ -22,7 +22,8 @@ The app supports multiple-choice questions, shows progress, and displays the fin
 
 
 ### 🏠 Home Screen
-![Home Screen](src\assets\Screenshot1.png)
+![Home Screen](./public/Screenshot1
+.png)
 
 ### 🏠 Subjects Screen
 ![Home Screen](assets/Screenshot2.png)
