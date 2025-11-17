@@ -22,16 +22,16 @@ The app supports multiple-choice questions, shows progress, and displays the fin
 > Replace the image paths with your actual screenshot file names
 
 ### 🏠 Home Screen
-![Home Screen](assests/Screenshot1.png)
+![Home Screen](assets/Screenshot1.png)
 
 ### 🏠 Subjects Screen
-![Home Screen](assests/Screenshot2.png)
+![Home Screen](assets/Screenshot2.png)
 
 ### 📝 Level Screen
-![Quiz Screen](assests/Screenshot3.png)
+![Quiz Screen](assets/Screenshot3.png)
 
 ### 🏁 Question Screen
-![Score Screen](assests/Screenshot4.png)
+![Score Screen](assets/Screenshot4.png)
 
 ---
 
