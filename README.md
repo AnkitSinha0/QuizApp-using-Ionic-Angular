@@ -25,13 +25,13 @@ The app supports multiple-choice questions, shows progress, and displays the fin
 ![Home Screen](./public/Screenshot1.png)
 
 ### 🏠 Subjects Screen
-![Home Screen](assets/Screenshot2.png)
+![Home Screen](./public/Screenshot2.png)
 
 ### 📝 Level Screen
-![Quiz Screen](assets/Screenshot3.png)
+![Quiz Screen](./public/Screenshot3.png)
 
 ### 🏁 Question Screen
-![Score Screen](assets/Screenshot4.png)
+![Score Screen](./public/Screenshot4.png)
 
 ---
 
